@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: -1px;
+}
+
+.product {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.front {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s;
+  opacity: 1;
+  position: absolute;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s;
+  opacity: 0;
+  position: absolute;
+}
+
+.product:hover .front {
+  opacity: 0;
+}
+
+.product:hover .back {
+  opacity: 1;
+}
