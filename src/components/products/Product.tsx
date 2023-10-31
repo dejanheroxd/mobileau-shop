@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ProductProps {
   imgFront: string;
   imgBack: string;
