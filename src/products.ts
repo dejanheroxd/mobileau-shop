@@ -117,7 +117,7 @@ export const PRODUCTS = [
     id: 4,
     productName: "The Meringue",
     subName: "Grande (H56cm)",
-    price: "460,00",
+    price: "395,00",
     description:
       "LA MERINGUE is a lamp infused with femininity and built from noble and innovative materials. Its name is linked to the many edges of the metal structure that shape the polymer lampshade. It is light and strong, reminiscent of the art of Japanese Washi papers. The ceramic base, a pottery clay glazed and fired at a temperature of 1300°C",
     dimensions: "Ø40 cm x H56 cm",

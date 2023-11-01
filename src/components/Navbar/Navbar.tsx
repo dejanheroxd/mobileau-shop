@@ -1,12 +1,13 @@
 import { X } from "phosphor-react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
 import ShoppingBag from "./ShoppingBag";
 import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isNavActive, setIsNavActive] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     function handleResize() {
@@ -29,6 +30,12 @@ export default function Navbar() {
     setIsNavActive(true);
   }
 
+  function deactivateNav() {
+    if (window.innerWidth < 600) {
+      setIsNavActive(false);
+    }
+  }
+
   const navVars = {
     initial: {
       opacity: 0,
@@ -38,6 +45,8 @@ export default function Navbar() {
       transition: { duration: 1 },
     },
   };
+
+  const smallerThan600 = window.innerWidth < 600;
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-40 flex h-[72px] items-center justify-between bg-transparent px-5 text-white tablet:h-[100px] tablet:justify-between tablet:bg-primaryColor tablet:px-[31px] tablet:text-black sm:absolute">
@@ -54,9 +63,10 @@ export default function Navbar() {
             variants={navVars}
             initial="initial"
             animate="animate"
-            className="absolute bottom-4 left-3 text-3xl font-semibold  tablet:relative tablet:flex  tablet:gap-x-3 tablet:text-[19px]"
+            className="absolute bottom-4 left-3 flex flex-col text-3xl font-semibold tablet:relative  tablet:flex tablet:gap-x-3  tablet:text-[19px] sm:flex-row"
           >
             <li
+              onClick={() => deactivateNav()}
               className="relative
                 inline-block
                 cursor-pointer
@@ -79,6 +89,7 @@ export default function Navbar() {
               <Link to="/">SHOP</Link>
             </li>
             <li
+              onClick={() => deactivateNav()}
               className="relative
                 inline-block
                 cursor-pointer
@@ -105,7 +116,14 @@ export default function Navbar() {
       )}
       <BurgerMenu onSetNavActiveClick={handleSetNavActive} />
       <motion.div variants={navVars} initial="initial" animate="animate">
-        <Link to="/" className="text-[21px] font-semibold tablet:text-[27px]">
+        <Link
+          to="/"
+          className={`${
+            location.pathname === "/" && smallerThan600
+              ? "text-white"
+              : "text-black"
+          } text-[21px] font-semibold tablet:text-[27px]`}
+        >
           CHÂTEAU LOUIS
         </Link>
       </motion.div>
