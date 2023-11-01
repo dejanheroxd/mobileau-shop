@@ -6,7 +6,7 @@ import { PRODUCTS } from "../../products";
 
 interface propNumber {
   number: number;
-  chair: boolean;
+  chair?: boolean;
 }
 
 export default function Products({ number, chair }: propNumber) {
