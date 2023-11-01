@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
 import ShoppingBag from "./ShoppingBag";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isNavActive, setIsNavActive] = useState(false);
@@ -28,6 +29,16 @@ export default function Navbar() {
     setIsNavActive(true);
   }
 
+  const navVars = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: { duration: 1 },
+    },
+  };
+
   return (
     <nav className="fixed left-0 right-0 top-0 z-40 flex h-[72px] items-center justify-between bg-transparent px-5 text-white tablet:h-[100px] tablet:justify-between tablet:bg-primaryColor tablet:px-[31px] tablet:text-black sm:absolute">
       {isNavActive && (
@@ -39,24 +50,74 @@ export default function Navbar() {
               className="tablet:hidden"
             />
           </button>
-          <div className="absolute bottom-4 left-3 text-3xl font-semibold  tablet:relative tablet:flex  tablet:gap-x-3 tablet:text-[19px]">
-            <li>
+          <motion.div
+            variants={navVars}
+            initial="initial"
+            animate="animate"
+            className="absolute bottom-4 left-3 text-3xl font-semibold  tablet:relative tablet:flex  tablet:gap-x-3 tablet:text-[19px]"
+          >
+            <li
+              className="relative
+                inline-block
+                cursor-pointer
+                capitalize
+                transition-all
+                duration-500
+                before:absolute
+                before:-bottom-[-4px]
+                before:left-0
+                before:h-[1px]
+                before:w-0
+                before:rounded-full
+                before:bg-black
+                before:transition-all
+                before:duration-500
+                before:content-['']
+                hover:before:w-full
+                hover:before:opacity-100"
+            >
               <Link to="/">SHOP</Link>
             </li>
-            <li>
+            <li
+              className="relative
+                inline-block
+                cursor-pointer
+                capitalize
+                transition-all
+                duration-500
+                before:absolute
+                before:-bottom-[-4px]
+                before:left-0
+                before:h-[1px]
+                before:w-0
+                before:rounded-full
+                before:bg-black
+                before:transition-all
+                before:duration-500
+                before:content-['']
+                hover:before:w-full
+                hover:before:opacity-100"
+            >
               <Link to="/about">ABOUT</Link>
             </li>
-          </div>
+          </motion.div>
         </ul>
       )}
       <BurgerMenu onSetNavActiveClick={handleSetNavActive} />
-      <Link to="/" className="text-[21px] font-semibold tablet:text-[27px]">
-        CHÂTEAU LOUIS
-      </Link>
+      <motion.div variants={navVars} initial="initial" animate="animate">
+        <Link to="/" className="text-[21px] font-semibold tablet:text-[27px]">
+          CHÂTEAU LOUIS
+        </Link>
+      </motion.div>
       <ShoppingBag />
-      <p className="hidden text-[19px] font-semibold tablet:block tablet:pl-9">
+      <motion.p
+        variants={navVars}
+        initial="initial"
+        animate="animate"
+        className="hidden text-[19px] font-semibold tablet:block tablet:pl-14 "
+      >
         CART (0)
-      </p>
+      </motion.p>
     </nav>
   );
 }

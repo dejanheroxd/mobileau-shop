@@ -1,9 +1,9 @@
+import React from "react";
+import { PRODUCTS } from "../../products";
 import Product from "../../components/products/Product";
 import { motion } from "framer-motion";
 
-import { PRODUCTS } from "../../products";
-
-export default function FirstProductsSection() {
+export default function SecondProductSection() {
   return (
     <div className="pb-24 2xl:pb-32">
       <div className="flex flex-col sm:flex-row sm:justify-end sm:px-5">
@@ -14,16 +14,16 @@ export default function FirstProductsSection() {
           className="bg-primaryColor px-0 pt-5 sm:pt-10 lg:px-0"
         >
           <Product
-            key={PRODUCTS[0].id}
-            firstImage={PRODUCTS[0].frontImg}
-            secondImage={PRODUCTS[0].sideImg}
-            price={PRODUCTS[0].price}
-            name={PRODUCTS[0].productName}
+            key={PRODUCTS[4].id}
+            secondImage={PRODUCTS[4].frontImg}
+            firstImage={PRODUCTS[4].onImg}
+            price={PRODUCTS[4].price}
+            name={PRODUCTS[4].productName}
             paddingTop="0"
           />
         </motion.div>
         <motion.div
-          initial={{ y: 30, opacity: 0 }}
+          initial={{ y: 30, opacity: 0.5 }}
           whileInView={{
             y: 0,
             opacity: 1,
@@ -33,11 +33,11 @@ export default function FirstProductsSection() {
           className="bg-primaryColor px-3 pt-[100px] sm:pt-10"
         >
           <Product
-            key={PRODUCTS[1].id}
-            firstImage={PRODUCTS[1].onImg}
-            secondImage={PRODUCTS[1].frontImg}
-            price={PRODUCTS[1].price}
-            name={PRODUCTS[1].productName}
+            key={PRODUCTS[6].id}
+            firstImage={PRODUCTS[6].onImg}
+            secondImage={PRODUCTS[6].frontImg}
+            price={PRODUCTS[6].price}
+            name={PRODUCTS[6].productName}
             paddingTop="0"
           />
         </motion.div>
