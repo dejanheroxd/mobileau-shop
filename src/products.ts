@@ -49,7 +49,7 @@ import lampGreenMiniOn from "./assets/Luminosité Louis/mini lamp green/lampGree
 
 export const PRODUCTS = [
   {
-    id: 1,
+    id: 0,
     productName: "The Mikado",
     price: "595,00",
     description:
@@ -70,7 +70,7 @@ export const PRODUCTS = [
       "The Mikado chair takes up the playful codes of the famous Japanese game and suggests the levitation of elements. In a minimalist style, it is comfortable and warm.",
   },
   {
-    id: 2,
+    id: 1,
     productName: "The Meringue",
     subName: "Grande (H56cm)",
     price: "395,00",
@@ -92,7 +92,7 @@ export const PRODUCTS = [
       "The transparency of this material allows a warm, muffled and relaxing light, creating a warm atmosphere that invites reverie. The texture of this material, close to the softness of the skin, plays a full role in the elegance of the product. ",
   },
   {
-    id: 3,
+    id: 2,
     productName: "The Meringue",
     subName: "Grande (H56cm)",
     price: "460,00",
@@ -114,7 +114,7 @@ export const PRODUCTS = [
       "The transparency of this material allows a warm, muffled and relaxing light, creating a warm atmosphere that invites reverie. The texture of this material, close to the softness of the skin, plays a full role in the elegance of the product. ",
   },
   {
-    id: 4,
+    id: 3,
     productName: "The Meringue",
     subName: "Grande (H56cm)",
     price: "395,00",
@@ -137,7 +137,7 @@ export const PRODUCTS = [
   },
   //=============== Mini
   {
-    id: 5,
+    id: 4,
     productName: "The Meringue",
     subName: "Mini (H20cm)",
     price: "295,00",
@@ -159,7 +159,7 @@ export const PRODUCTS = [
       "The transparency of this material allows a warm, muffled and relaxing light, creating a warm atmosphere that invites reverie. The texture of this material, close to the softness of the skin, plays a full role in the elegance of the product. ",
   },
   {
-    id: 6,
+    id: 5,
     productName: "The Meringue",
     subName: "Mini (H20cm)",
     price: "295,00",
@@ -181,7 +181,7 @@ export const PRODUCTS = [
       "The transparency of this material allows a warm, muffled and relaxing light, creating a warm atmosphere that invites reverie. The texture of this material, close to the softness of the skin, plays a full role in the elegance of the product. ",
   },
   {
-    id: 7,
+    id: 6,
     productName: "The Meringue",
     subName: "Mini (H20cm)",
     price: "295,00",

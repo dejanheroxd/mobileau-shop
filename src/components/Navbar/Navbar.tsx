@@ -1,9 +1,10 @@
 import { X } from "phosphor-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
 import ShoppingBag from "./ShoppingBag";
 import { motion } from "framer-motion";
+import { ShopContext } from "../../context/shop-context";
 
 interface NavbarProps {
   openShopNavbar: () => void;
@@ -12,6 +13,7 @@ interface NavbarProps {
 export default function Navbar({ openShopNavbar }: NavbarProps) {
   const [isNavActive, setIsNavActive] = useState(false);
   const location = useLocation();
+  const { cartItems } = useContext(ShopContext);
 
   useEffect(() => {
     function handleResize() {
@@ -51,6 +53,11 @@ export default function Navbar({ openShopNavbar }: NavbarProps) {
   };
 
   const smallerThan600 = window.innerWidth < 600;
+
+  const cartSize = Object.values(cartItems).reduce(
+    (acc, prev) => acc + prev,
+    0,
+  );
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-40 flex h-[72px] items-center justify-between bg-transparent px-5 text-white tablet:h-[100px] tablet:justify-between tablet:bg-primaryColor tablet:px-[31px] tablet:text-black sm:absolute">
@@ -145,8 +152,9 @@ export default function Navbar({ openShopNavbar }: NavbarProps) {
           CHÂTEAU LOUIS
         </Link>
       </motion.div>
-      <ShoppingBag openShopNavbar={openShopNavbar} />
+      <ShoppingBag openShopNavbar={openShopNavbar} cartSize={cartSize} />
       <motion.p
+        onClick={() => openShopNavbar()}
         variants={navVars}
         initial="initial"
         animate="animate"
@@ -156,9 +164,9 @@ export default function Navbar({ openShopNavbar }: NavbarProps) {
           location.pathname === "/lampMini"
             ? "pl-2"
             : "tablet:pl-12"
-        } hidden text-[19px] font-semibold tablet:block `}
+        } hidden text-[19px] font-semibold hover:cursor-pointer tablet:block `}
       >
-        CART (0)
+        CART ({cartSize})
       </motion.p>
     </nav>
   );

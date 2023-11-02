@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { PRODUCTS } from "../../products";
 import ProductSwiper from "./ProductSwiper";
 import ColoursButtons from "./ColoursButtons";
 import ProductsDescription from "./ProductsDescription";
+import { ShopContext } from "../../context/shop-context";
 
 interface propNumber {
   number: number;
   chair?: boolean;
   mini?: boolean;
+  onOpenShopNav: () => void;
 }
 
-export default function Products({ number, chair, mini }: propNumber) {
+export default function Products({
+  number,
+  chair,
+  mini,
+  onOpenShopNav,
+}: propNumber) {
   const [isTableActive, setIsTableActive] = useState(true);
   const [productNumber, setProductNumber] = useState(number);
+  const { addToCart, removeFromCart, cartItems } = useContext(ShopContext);
 
   function handleChangeProductNumber(number: number) {
     setProductNumber(number);
@@ -50,7 +58,12 @@ export default function Products({ number, chair, mini }: propNumber) {
               mini={mini}
             />
             <div className="mx-5 pb-3 sm:mx-[31px]">
-              <button className=" mt-3 w-full border bg-black py-4 text-[14px] text-white sm:py-4 sm:text-[17px]">
+              <button
+                onClick={() => {
+                  onOpenShopNav(), addToCart(productNumber);
+                }}
+                className=" mt-3 w-full border bg-black py-4 text-[14px] text-white sm:py-4 sm:text-[17px]"
+              >
                 ADD TO CART
               </button>
             </div>
