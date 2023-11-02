@@ -11,7 +11,6 @@ export default function home() {
       <FirstProductsSection />
       <PicturesSection />
       <SecondProductSection />
-      <Footer />
     </div>
   );
 }

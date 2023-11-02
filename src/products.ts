@@ -87,7 +87,7 @@ export const PRODUCTS = [
     storyImg: lampStory,
     storyVideo: lampVideo,
     story:
-      "The first Benjamin desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Oursroux, Benjamin Guedj's other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
+      "The first Mathieu desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Louxon, Mathieu Louis other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
     secondStory:
       "The transparency of this material allows a warm, muffled and relaxing light, creating a warm atmosphere that invites reverie. The texture of this material, close to the softness of the skin, plays a full role in the elegance of the product. ",
   },
@@ -97,7 +97,7 @@ export const PRODUCTS = [
     subName: "Grande (H56cm)",
     price: "460,00",
     description:
-      "After several months of research to obtain this particular color during baking and to celebrate the first anniversary of Bureau Benjamin, the Meringue is adorned with the iconic Oursroux Pink. A gourmand color that highlights our joie de vivre. LA MERINGUE is a lamp imbued with femininity, built around noble and innovative materials. Its name is linked to the many edges of the metal structure that shape the polymer shade, light and solid, reminiscent of the art of Japanese papers.",
+      "After several months of research to obtain this particular color during baking and to celebrate the first anniversary of Bureau Mathieu, the Meringue is adorned with the iconic Louxon Pink. A gourmand color that highlights our joie de vivre. LA MERINGUE is a lamp imbued with femininity, built around noble and innovative materials. Its name is linked to the many edges of the metal structure that shape the polymer shade, light and solid, reminiscent of the art of Japanese papers.",
     dimensions: "Ø40 cm x H56 cm",
     lampshade: "Polymer skin touch",
     base: "Glazed pottery clay with a semi glossy finish",
@@ -109,7 +109,7 @@ export const PRODUCTS = [
     storyImg: lampRoseStory,
     storyVideo: lampRoseVideo,
     story:
-      "The first Benjamin desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Oursroux, Benjamin Guedj's other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
+      "The first Mathieu desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Louxon, Mathieu Louis other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
     secondStory:
       "The transparency of this material allows a warm, muffled and relaxing light, creating a warm atmosphere that invites reverie. The texture of this material, close to the softness of the skin, plays a full role in the elegance of the product. ",
   },
@@ -131,7 +131,7 @@ export const PRODUCTS = [
     storyImg: lampYellowStory,
     storyVideo: lampYellowVideo,
     story:
-      "The first Benjamin desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Oursroux, Benjamin Guedj's other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
+      "The first Mathieu desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Louxon, Mathieu Louis other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
     secondStory:
       "The transparency of this material allows a warm, muffled and relaxing light, creating a warm atmosphere that invites reverie. The texture of this material, close to the softness of the skin, plays a full role in the elegance of the product. ",
   },
@@ -154,7 +154,7 @@ export const PRODUCTS = [
     storyImg: lampStoryMini,
     storyVideo: lampVideoMini,
     story:
-      "The first Benjamin desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Oursroux, Benjamin Guedj's other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
+      "The first Mathieu desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Louxon, Mathieu Louis other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
     secondStory:
       "The transparency of this material allows a warm, muffled and relaxing light, creating a warm atmosphere that invites reverie. The texture of this material, close to the softness of the skin, plays a full role in the elegance of the product. ",
   },
@@ -176,7 +176,7 @@ export const PRODUCTS = [
     storyImg: lampStoryMini,
     storyVideo: lampVideoMini,
     story:
-      "The first Benjamin desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Oursroux, Benjamin Guedj's other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
+      "The first Mathieu desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Louxon, Mathieu Louis other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
     secondStory:
       "The transparency of this material allows a warm, muffled and relaxing light, creating a warm atmosphere that invites reverie. The texture of this material, close to the softness of the skin, plays a full role in the elegance of the product. ",
   },
@@ -198,7 +198,7 @@ export const PRODUCTS = [
     storyImg: lampStoryMini,
     storyVideo: lampVideoMini,
     story:
-      "The first Benjamin desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Oursroux, Benjamin Guedj's other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
+      "The first Mathieu desk lamp takes its inspiration from the aspirational journey of the 3D visuals of designer Louxon, Mathieu Louis other stage name. A creation dictated by his deep desire to move from the virtual to the real.",
     secondStory:
       "The transparency of this material allows a warm, muffled and relaxing light, creating a warm atmosphere that invites reverie. The texture of this material, close to the softness of the skin, plays a full role in the elegance of the product. ",
   },

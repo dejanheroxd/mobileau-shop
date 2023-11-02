@@ -16,7 +16,7 @@ export default function Product({
   return (
     <div className="relative">
       <div className="group/product relative flex justify-center hover:cursor-pointer">
-        <div className="relative flex h-[400px] w-[300px] justify-center sm:h-[320px] sm:w-[250px] md:h-[360px] md:w-[290px] lg:h-[520px] lg:w-[400px] xl:h-[600px] xl:w-[480px] 2xl:h-[940px] 2xl:w-[760px]">
+        <div className="relative flex h-[400px] w-[321px] justify-center sm:h-[320px] sm:w-[250px] md:h-[360px] md:w-[290px] lg:h-[520px] lg:w-[400px] xl:h-[600px] xl:w-[480px] 2xl:h-[940px] 2xl:w-[760px]">
           <img
             className="absolute top-0 h-full w-full opacity-0 duration-700 group-hover/product:opacity-100"
             src={firstImage}

@@ -15,6 +15,14 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/lampWhite" element={<Products number={1} />} />
           <Route path="/chair" element={<Products number={0} chair={true} />} />
+          <Route
+            path="/lampMini"
+            element={<Products number={4} mini={true} />}
+          />
+          <Route
+            path="/lampMiniGreen"
+            element={<Products number={6} mini={true} />}
+          />
         </Routes>
         <Footer />
       </Router>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="bg-primaryColor px-7 lg:pb-10 2xl:mt-20">
+    <div className="bg-primaryColor px-5 sm:px-7 lg:pb-10 2xl:mt-20">
       <div className=" flex">
         <p className="w-[250px] pb-3 pt-4 text-[40px] font-semibold leading-[35px] sm:w-full sm:text-right sm:text-7xl md:text-8xl lg:text-9xl 2xl:text-[220px]">
           CHÂTEAU LOUIS

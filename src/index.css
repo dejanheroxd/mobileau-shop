@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "swiper/swiper-bundle.min.css";
 
 body {
   font-family: "DM Sans", sans-serif;
@@ -35,4 +36,16 @@ body {
 
 .product:hover .back {
   opacity: 1;
+}
+
+.mySwiper {
+  width: 100%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white;
+}
+
+.swiper-pagination-bullet {
+  background-color: white;
 }
