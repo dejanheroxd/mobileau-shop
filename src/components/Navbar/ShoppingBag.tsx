@@ -1,11 +1,16 @@
 import { Bag } from "phosphor-react";
 import { useLocation } from "react-router-dom";
 
-export default function ShoppingBag() {
+interface ShoppingBagProps {
+  openShopNavbar: () => void;
+}
+
+export default function ShoppingBag({ openShopNavbar }: ShoppingBagProps) {
   const location = useLocation();
 
   return (
     <button
+      onClick={() => openShopNavbar()}
       className={`${
         location.pathname === "/" ? "text-white" : "text-black"
       } relative tablet:hidden`}

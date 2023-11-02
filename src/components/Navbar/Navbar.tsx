@@ -5,7 +5,11 @@ import BurgerMenu from "./BurgerMenu";
 import ShoppingBag from "./ShoppingBag";
 import { motion } from "framer-motion";
 
-export default function Navbar() {
+interface NavbarProps {
+  openShopNavbar: () => void;
+}
+
+export default function Navbar({ openShopNavbar }: NavbarProps) {
   const [isNavActive, setIsNavActive] = useState(false);
   const location = useLocation();
 
@@ -141,7 +145,7 @@ export default function Navbar() {
           CHÂTEAU LOUIS
         </Link>
       </motion.div>
-      <ShoppingBag />
+      <ShoppingBag openShopNavbar={openShopNavbar} />
       <motion.p
         variants={navVars}
         initial="initial"
