@@ -74,7 +74,7 @@ export default function Navbar() {
                 transition-all
                 duration-500
                 before:absolute
-                before:-bottom-[-4px]
+                before:-bottom-[-5px]
                 before:left-0
                 before:h-[1px]
                 before:w-0
@@ -86,7 +86,14 @@ export default function Navbar() {
                 hover:before:w-full
                 hover:before:opacity-100"
             >
-              <Link to="/">SHOP</Link>
+              <Link
+                to="/"
+                className={`${
+                  location.pathname === "/" && "border-b border-black"
+                }`}
+              >
+                SHOP
+              </Link>
             </li>
             <li
               onClick={() => deactivateNav()}
@@ -97,7 +104,7 @@ export default function Navbar() {
                 transition-all
                 duration-500
                 before:absolute
-                before:-bottom-[-4px]
+                before:-bottom-[-5px]
                 before:left-0
                 before:h-[1px]
                 before:w-0
@@ -109,7 +116,14 @@ export default function Navbar() {
                 hover:before:w-full
                 hover:before:opacity-100"
             >
-              <Link to="/about">ABOUT</Link>
+              <Link
+                to="/about"
+                className={`${
+                  location.pathname === "/about" && "border-b border-black"
+                }`}
+              >
+                ABOUT
+              </Link>
             </li>
           </motion.div>
         </ul>
@@ -132,7 +146,13 @@ export default function Navbar() {
         variants={navVars}
         initial="initial"
         animate="animate"
-        className="hidden text-[19px] font-semibold tablet:block tablet:pl-14 "
+        className={`${
+          location.pathname === "/chair" ||
+          location.pathname === "/lampWhie" ||
+          location.pathname === "/lampMini"
+            ? "pl-2"
+            : "tablet:pl-12"
+        } hidden text-[19px] font-semibold tablet:block `}
       >
         CART (0)
       </motion.p>

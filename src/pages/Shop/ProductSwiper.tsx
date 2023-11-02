@@ -42,7 +42,7 @@ export default function ProductSwiper({
             <img
               src={PRODUCTS[productNumber].frontImg}
               alt=""
-              style={{ width: "50vw", height: "65vw" }}
+              style={{ width: "48.7vw", height: "65vw" }}
             />
           </SwiperSlide>
           <SwiperSlide style={{ width: "160px", height: "65vw" }}>
@@ -50,13 +50,13 @@ export default function ProductSwiper({
               <img
                 src={PRODUCTS[productNumber].sideImg}
                 alt=""
-                style={{ width: "50vw", height: "65vw" }}
+                style={{ width: "48.7vw", height: "65vw" }}
               />
             ) : (
               <img
                 src={PRODUCTS[productNumber].topImg}
                 alt=""
-                style={{ width: "50vw", height: "65vw" }}
+                style={{ width: "48.7vw", height: "65vw" }}
               />
             )}
           </SwiperSlide>
