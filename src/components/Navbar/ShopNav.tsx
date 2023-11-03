@@ -79,11 +79,15 @@ export default function ShopNav({ onCloseNav }: ShopNavProps) {
           <p className="py-3 text-center text-[13px]">
             Shipping costs will be calculated in the next step
           </p>
-          <Link to={"/payment"} onClick={() => onCloseNav()}>
-            <button className="w-full bg-black py-4 text-[18px] text-white duration-300 ">
-              PROCCED TO PAYMENT
-            </button>
-          </Link>
+          {totalAmount > 0 ? (
+            <Link to={"/payment"} onClick={() => onCloseNav()}>
+              <button className="w-full bg-black py-4 text-[18px] text-white duration-300 ">
+                PROCCED TO PAYMENT
+              </button>
+            </Link>
+          ) : (
+            <div className="w-full text-center">Your Cart is empty</div>
+          )}
         </div>
         <button onClick={() => onCloseNav()} className="absolute right-3 top-3">
           <X size={37} />
