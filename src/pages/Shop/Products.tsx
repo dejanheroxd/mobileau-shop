@@ -62,7 +62,7 @@ export default function Products({
                 onClick={() => {
                   onOpenShopNav(), addToCart(productNumber);
                 }}
-                className=" mt-3 w-full border bg-black py-4 text-[14px] text-white sm:py-4 sm:text-[17px]"
+                className="mt-3 w-full border border-black bg-black py-4 text-[14px] font-semibold text-white duration-300 hover:border hover:border-black hover:bg-[#e9e6d6] hover:text-black sm:py-4 sm:text-[17px]"
               >
                 ADD TO CART
               </button>

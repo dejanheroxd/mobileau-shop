@@ -4,9 +4,10 @@ import { PRODUCTS } from "../products";
 interface ShopContextValue {
   cartItems: { [key: number]: number };
   setCartItems: React.Dispatch<React.SetStateAction<{ [key: number]: number }>>;
-  updateCartItemAmount: (newAmount: number, id: number) => void;
+  // updateCartItemAmount: (newAmount: number, id: number) => void;
   addToCart: (id: number) => void;
   removeFromCart: (id: number) => void;
+  getTotalCartAmount: () => number;
 }
 
 export const ShopContext = createContext<ShopContextValue>({
@@ -14,7 +15,8 @@ export const ShopContext = createContext<ShopContextValue>({
   setCartItems: () => {},
   addToCart: (id: number) => {},
   removeFromCart: (id: number) => {},
-  updateCartItemAmount: (newAmount: number, id: number) => {},
+  // updateCartItemAmount: (newAmount: number, id: number) => {},
+  getTotalCartAmount: () => 0,
 });
 
 const getDefaultCart = () => {
@@ -34,6 +36,24 @@ interface ShopContextProviderProps {
 export default function ShopContextProvider(props: ShopContextProviderProps) {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
+  function getTotalCartAmount() {
+    let totalAmount = 0;
+
+    for (const itemId in cartItems) {
+      const quantity = cartItems[itemId];
+      const itemInfo = PRODUCTS.find(
+        (product) => product.id === Number(itemId),
+      );
+
+      if (quantity > 0 && itemInfo) {
+        const price = parseFloat(itemInfo.price.toString());
+        totalAmount += quantity * (isNaN(price) ? 0 : price);
+      }
+    }
+
+    return totalAmount;
+  }
+
   function addToCart(id: number) {
     setCartItems((prev) => ({ ...prev, [id]: prev[id] + 1 }));
   }
@@ -41,16 +61,17 @@ export default function ShopContextProvider(props: ShopContextProviderProps) {
     setCartItems((prev) => ({ ...prev, [id]: prev[id] - 1 }));
   }
 
-  function updateCartItemAmount(newAmount: number, id: number) {
-    setCartItems((prev) => ({ ...prev, [id]: newAmount }));
-  }
+  // function updateCartItemAmount(newAmount: number, id: number) {
+  //   setCartItems((prev) => ({ ...prev, [id]: newAmount }));
+  // }
 
   const contextValue = {
     cartItems,
     setCartItems,
     addToCart,
     removeFromCart,
-    updateCartItemAmount,
+    // updateCartItemAmount,
+    getTotalCartAmount,
   };
 
   return (

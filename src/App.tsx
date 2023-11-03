@@ -8,6 +8,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ShopNav from "./components/Navbar/ShopNav";
 import { useState } from "react";
 import ShopContextProvider from "./context/shop-context";
+import Payment from "./pages/Payment/Payment";
 
 function App() {
   const [isShopNavActive, setIsShopNavActive] = useState(false);
@@ -65,6 +66,7 @@ function App() {
                 />
               }
             />
+            <Route path="/payment" element={<Payment />} />
           </Routes>
           <Footer />
         </Router>

@@ -4,6 +4,7 @@ import CartItem from "./CartItem";
 import { ShopContext } from "../../context/shop-context";
 import { useContext, useEffect, useRef } from "react";
 import { PRODUCTS } from "../../products";
+import { Link } from "react-router-dom";
 
 interface ShopNavProps {
   onCloseNav: () => void;
@@ -16,9 +17,15 @@ const shopNavVars = {
 };
 
 export default function ShopNav({ onCloseNav }: ShopNavProps) {
-  const { addToCart, removeFromCart, cartItems, updateCartItemAmount } =
-    useContext(ShopContext);
+  const {
+    addToCart,
+    removeFromCart,
+    cartItems,
+    // updateCartItemAmount,
+    getTotalCartAmount,
+  } = useContext(ShopContext);
   const shopRef = useRef<HTMLDivElement | null>(null);
+  const totalAmount = getTotalCartAmount();
 
   useEffect(() => {
     function handler(e: any) {
@@ -42,7 +49,7 @@ export default function ShopNav({ onCloseNav }: ShopNavProps) {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="fixed bottom-0 right-0 top-0 z-40 flex w-[300px] flex-col justify-between bg-[#d9719c] px-3 py-3 sm:w-[555px]"
+        className="fixed bottom-0 right-0 top-0 z-40 flex w-[300px] flex-col justify-between bg-[#e9e6d6] px-3 py-3 sm:w-[555px]"
       >
         <div>
           <p className="text-7xl font-bold">CART</p>
@@ -56,7 +63,7 @@ export default function ShopNav({ onCloseNav }: ShopNavProps) {
                   price={product.price}
                   amount={cartItems[product.id]}
                   id={product.id}
-                  updateCartItemAmount={updateCartItemAmount}
+                  // updateCartItemAmount={updateCartItemAmount}
                   onAddToCart={addToCart}
                   onRemoveFromCart={removeFromCart}
                 />
@@ -67,14 +74,16 @@ export default function ShopNav({ onCloseNav }: ShopNavProps) {
         <div className="flex flex-col justify-center">
           <div className="flex justify-between border-b border-black pb-4 text-xl font-semibold">
             <p>TOTAL (INCL. VAT)</p>
-            <p>€0.00</p>
+            <p>€{totalAmount},00</p>
           </div>
           <p className="py-3 text-center text-[13px]">
             Shipping costs will be calculated in the next step
           </p>
-          <button className="bg-black py-4 text-[18px] text-white">
-            PROCCED TO PAYMENT
-          </button>
+          <Link to={"/payment"} onClick={() => onCloseNav()}>
+            <button className="w-full bg-black py-4 text-[18px] text-white duration-300 ">
+              PROCCED TO PAYMENT
+            </button>
+          </Link>
         </div>
         <button onClick={() => onCloseNav()} className="absolute right-3 top-3">
           <X size={37} />
