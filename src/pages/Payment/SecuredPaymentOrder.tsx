@@ -1,22 +1,36 @@
+import { CircleNotch } from "phosphor-react";
 import React from "react";
 import { useState } from "react";
 
 export default function SecuredPaymentOrder() {
   const [cardNumber, setCardNumber] = useState("");
   const [showError, setShowError] = useState(false);
+  const [placeOrder, setPlaceOrder] = useState(false);
+  const [showOrderError, setShowOrderError] = useState(false);
+  console.log(cardNumber);
 
   const handlePlaceOrder = () => {
     if (cardNumber === "") {
       setShowError(true);
     } else {
       setShowError(false);
+      setPlaceOrder(true);
+      setTimeout(() => {
+        setPlaceOrder(false);
+        setShowOrderError(true);
+        setShowError(true);
+      }, 3000);
     }
   };
 
-  // accept only numbers as input
+  const handleCardNumberInput = (e: any) => {
+    const numericValue = e.target.value.replace(/\D/g, "");
+    setCardNumber(numericValue);
+    setShowError(false);
+  };
 
   return (
-    <div>
+    <div className="lg:w-[600px] xl:w-[800px] 2xl:w-[1300px]">
       <p className="pb-3 text-[25px]">Secured Payment</p>
       <div>
         <p className="text-[18px]">Credit Card</p>
@@ -65,19 +79,18 @@ export default function SecuredPaymentOrder() {
               )}
             </div>
             <input
-              onChange={(e) => {
-                setCardNumber(e.target.value), setShowError(false);
-              }}
+              onChange={handleCardNumberInput}
+              value={cardNumber}
               className={`${
                 showError && "text-red-500"
-              } h-10 w-full border border-neutral-300 pl-10 placeholder:text-neutral-400/50 focus:border-black focus:outline-none`}
+              } h-10 w-full border border-neutral-300 pl-10 placeholder:text-neutral-400/50 focus:border-black focus:outline-none 2xl:h-[45px]`}
               type="text"
               placeholder="Card Number"
             />
           </div>
         </div>
       </div>
-      <div>
+      <div className="relative">
         <p className="pb-6 text-[11px]">
           Your personal data will be used to process your order, support your
           experience throughout this website, and for other purposes described
@@ -86,10 +99,24 @@ export default function SecuredPaymentOrder() {
       </div>
       <button
         onClick={handlePlaceOrder}
-        className="w-full bg-black py-4 text-[18px] text-white"
+        className="w-full bg-black py-4 text-[18px] text-white 2xl:py-[17px]"
       >
-        <p>Place order</p>
+        {placeOrder ? (
+          <div className="flex w-full items-center justify-center">
+            <CircleNotch size={27} weight="bold" className="animate-spin" />
+          </div>
+        ) : (
+          <p>Place order</p>
+        )}
       </button>
+      {showOrderError && (
+        <div className="w-full pt-4">
+          <p>
+            Session expired. Please try again, or contact customer support for
+            assistance.
+          </p>
+        </div>
+      )}
     </div>
   );
 }

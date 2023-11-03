@@ -95,7 +95,8 @@ export default function Navbar({ openShopNavbar }: NavbarProps) {
                 before:duration-500
                 before:content-['']
                 hover:before:w-full
-                hover:before:opacity-100"
+                hover:before:opacity-100
+                sm:before:-bottom-[-4px]"
             >
               <Link
                 to="/"
@@ -125,7 +126,8 @@ export default function Navbar({ openShopNavbar }: NavbarProps) {
                 before:duration-500
                 before:content-['']
                 hover:before:w-full
-                hover:before:opacity-100"
+                hover:before:opacity-100
+                sm:before:-bottom-[-4px]"
             >
               <Link
                 to="/about"

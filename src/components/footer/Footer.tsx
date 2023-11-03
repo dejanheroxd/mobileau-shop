@@ -10,12 +10,12 @@ export default function Footer() {
             CHÂTEAU LOUIS
           </p>
         </div>
-        <div className=" sm:flex sm:flex-row sm:justify-end">
+        <div className=" sm:flex sm:flex-row sm:justify-end 2xl:mr-[-15px]">
           <div className="flex gap-x-8 border-b border-black py-3 text-[18px] sm:flex-row sm:justify-end sm:border-hidden md:gap-x-12 xl:gap-x-20 2xl:gap-x-40">
             <div className="flex flex-col sm:order-2">
               <a
                 className="relative inline-block
-                w-[100px]
+                w-[93px]
                 cursor-pointer
                 capitalize
                 transition-all
@@ -38,7 +38,7 @@ export default function Footer() {
               </a>
               <a
                 className="relative inline-block
-              w-[40px]
+              w-[31px]
               cursor-pointer
               capitalize
               transition-all
@@ -61,7 +61,7 @@ export default function Footer() {
               </a>
               <a
                 className="relative inline-block
-                w-[170px]
+                w-[168px]
                 cursor-pointer
                 capitalize
                 transition-all
@@ -86,7 +86,7 @@ export default function Footer() {
             <div className="flex flex-col sm:order-3">
               <a
                 className="relative inline-block
-              w-[70px]
+              w-[63px]
               cursor-pointer
               capitalize
               transition-all
@@ -109,7 +109,7 @@ export default function Footer() {
               </a>
               <a
                 className="relative inline-block
-              w-[80px]
+              w-[76px]
               cursor-pointer
               capitalize
               transition-all
@@ -132,7 +132,7 @@ export default function Footer() {
               </a>
               <a
                 className="relative inline-block
-              w-[60px]
+              w-[53px]
               cursor-pointer
               capitalize
               transition-all
@@ -155,10 +155,10 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className="py-3 pb-6 text-xl sm:order-1 md:pl-8 xl:pl-20 2xl:pl-40 2xl:pr-24 ">
+          <div className="py-3 pb-6 text-[18px] sm:order-1 md:pl-8 xl:pl-20 2xl:mr-24 2xl:pl-40 ">
             <p
               className="relative inline-block
-            w-[60px]
+            w-[168px]
             cursor-pointer
             capitalize
             transition-all
@@ -176,7 +176,7 @@ export default function Footer() {
             hover:before:w-full
             hover:before:opacity-100"
             >
-              English
+              © 2024 Château Louis
             </p>
           </div>
         </div>
