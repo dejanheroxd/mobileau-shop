@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { PRODUCTS } from "../../products";
 import { ShopContext } from "../../context/shop-context";
 import ItemsToPay from "./ItemsToPay";
 
 export default function PaymentInputs() {
   const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+
+  const [shippingCost, setShippingCost] = useState(0);
 
   const credentials = [
     {
@@ -40,6 +42,20 @@ export default function PaymentInputs() {
   ];
 
   const totalAmount = getTotalCartAmount();
+
+  function onStandartShipping() {
+    if (totalAmount > 0) {
+      setShippingCost(10);
+    }
+  }
+
+  function onExpressShipping() {
+    if (totalAmount > 0) {
+      setShippingCost(25);
+    }
+  }
+
+  const totalAmountWithShipping = totalAmount + shippingCost;
 
   return (
     <div className="lg:flex lg:gap-x-7 2xl:gap-x-24">
@@ -129,16 +145,37 @@ export default function PaymentInputs() {
           }
         })}
         <div className="px-4 pb-3 pt-5">
-          <div className="w-[250px]">
+          <div className="w-[290px]">
             <p className="pb-2 text-3xl">Shipping</p>
-            <p className="text-[18px]">Flat Rate standard shipping: $15</p>
-            <p className="text-[18px]">
-              Flat Rate express shipping: $30 sales tax $65
-            </p>
+            <div className="flex items-center gap-x-2">
+              <input
+                onClick={() => onStandartShipping()}
+                type="radio"
+                name="shippingOption"
+                id="standardShipping"
+                className="h-4 w-4 hover:cursor-pointer"
+                defaultChecked
+              />
+              <label htmlFor="standardShipping" className="text-[18px]">
+                Standard shipping: $10
+              </label>
+            </div>
+            <div className="flex items-center gap-x-2">
+              <input
+                onClick={() => onExpressShipping()}
+                type="radio"
+                name="shippingOption"
+                id="expressShipping"
+                className="h-4 w-4 hover:cursor-pointer"
+              />
+              <label htmlFor="expressShipping" className="text-[18px]">
+                Express shipping: $25
+              </label>
+            </div>
           </div>
           <div className="flex w-full justify-between pt-5">
             <p className="text-3xl">Total</p>
-            <p className="text-[18px]">${totalAmount},00</p>
+            <p className="text-[18px]">${totalAmountWithShipping},00</p>
           </div>
         </div>
       </div>
