@@ -30,7 +30,7 @@ export default function SecuredPaymentOrder() {
   };
 
   return (
-    <div className="lg:w-[600px] xl:w-[800px] 2xl:w-[1300px]">
+    <div className="mt-14 lg:mt-0 lg:w-[600px] xl:w-[800px] 2xl:w-[1300px]">
       <p className="pb-3 text-[25px]">Secured Payment</p>
       <div>
         <p className="text-[18px]">Credit Card</p>
